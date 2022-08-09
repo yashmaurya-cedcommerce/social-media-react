@@ -1,38 +1,1006 @@
+body
+{
+  background-image: url("/public/cover3.jpg");
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+
+/* navbar css  */
+
+
+.navbarContainer
+{
+  display: flex;
+  justify-content: space-around;
+  background-color: rgb(0, 0, 0, 0.4);
+  color: white;
+  padding: 0% 2%;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.logoDiv
+{
+  width: 30%;
+  font-size: 2vw;
+}
+
+.feedHeading
+{
+  width: 40%;
+  font-size: 2vw;
+  text-align: center;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: bold;
+  padding: 0% 3%;
+}
+
+.mainNav
+{
+  width: 30%;
+  text-align: end;
+  font-size: 2vw;
+}
+
+.navLink
+{
+  text-decoration: none;
+  color: white;
+  padding: 0% 3%;
+  font-weight: bold;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+#aboutUsLink
+{
+  display: inline-block;
+}
+
+.navLink:hover
+{
+  opacity: 85%;
+  color: orangered;
+}
+
+#loginNavLink
+{
+  background-color: orangered;
+  padding: 1% 4%;
+  border-radius: 17px;
+}
+
+#loginNavLink:hover
+{
+  color: black;
+  background-color: aliceblue;
+}
+
+#signOutLink
+{
+  background-color: orangered;
+  padding: 1% 4%;
+  border-radius: 17px;
+  border: 2px solid orangered;
+  font-size: 1.8vw;
+  color: white;
+  font-weight: bold;
+  font-family: 'Roboto Condensed', sans-serif;
+  transition: transform .2s;
+}
+
+#signOutLink:hover
+{
+  color: black;
+  background-color: aliceblue;
+  border: 2px solid white;
+  transform: scale(1.1);
+}
+
+
+
+
+
+/* landing page css */
+
+
+
+
+.landingContainer
+{
+  position: relative;
+  /* z-index: -1; */
+}
+
+
+.taglineDiv
+{
+  display: inline-block;
+  margin-top: 2%;
+  border-radius: 8px;
+  padding: 10%;
+  background-color: rgb(0, 0, 0, 0.7);
+  box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
+  font-size: 2.5vw;
+  color: white;
+  font-family: 'Roboto Condensed', sans-serif;
+  animation: comeUpAnimation 0.5s forwards;
+}
+
+@keyframes comeUpAnimation{
+  0%{
+      opacity: 0;
+      transform: translateY(100%);
+      transition: .1s ease-in-out;
+
+  }
+
+  50%{
+    opacity: 0.5;
+  }
+
+  100%{
+      opacity: 1;
+      transform: translateY(0);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+
+.taglineDiv h3
+{
+  color: white;
+  font-family: 'Oswald', sans-serif;
+  /* font-weight: bolder; */
+  font-size: 6vw;
+}
+
+.taglineDiv h4
+{
+  color: white;
+  font-family: 'Mulish', sans-serif;
+  font-size: 4vw;
+}
+
+.loginBtn
+{
+  background-color: orangered;
+  border: 2px solid orangered;
+  padding: 1% 5%;
+  border-radius: 8px;
+  transition: transform .2s; 
+}
+
+.loginBtn:hover
+{
+  transform: scale(1.1);
+}
+
+.registerBtn
+{
+  background-color: orangered;
+  border: 2px solid orangered;
+  padding: 1% 5%;
+  border-radius: 8px;
+  transition: transform .2s;
+}
+
+.registerBtn:hover
+{
+  transform: scale(1.1);
+}
+
+
+
+
+
+/* LOGIN modal css  */
+
+.loginModal
+{
+  display: none;
+  position: fixed;
+  width: 40%;
+  top: 20%;
+  left: 30%;
+  background-color: white;
+  padding: 3%;
+  border-radius: 8px;
+  font-family: 'Roboto Condensed', sans-serif;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  font-weight: bolder;
+  font-size: 2vw;
+}
+
+.loginModal table
+{
+  width: 100%;
+}
+
+.loginModal input
+{
+  margin: 2% 2%;
+  width: 100%;
+}
+
+@keyframes openAnimation{
+  0%{
+      opacity: 0;
+      /* width: 90%; */
+  }
+  100%{
+      opacity: 1;
+      /* width: 100%; */
+  }
+}
+
+.closeModalBtn
+{
+  position: absolute;
+  top: 5%;
+  right: 2%;
+  background-color: orangered;
+  border: 2px solid orangered;
+  border-radius: 4px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.loginBtnModal
+{
+  background-color: orangered;
+  border: 2px solid orangered;
+  border-radius: 8px;
+  transition: transform .2s; 
+  width: 100%;
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.loginBtnModal:hover
+{
+  transform: scale(1.1);
+}
+
+
+
+#errorDisplayLogin
+{
+  color:rgb(240, 28, 28)
+}
+
+
+
+/* REGISTER modal css  */
+
+.registerModal
+{
+  display: none;
+  position: fixed;
+  width: 40%;
+  top: 5%;
+  left: 30%;
+  background-color: white;
+  padding: 3%;
+  border-radius: 8px;
+  font-family: 'Roboto Condensed', sans-serif;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  font-weight: bolder;
+  font-size: 2vw;
+}
+
+.registerModalBtn
+{
+  background-color: orangered;
+  border: 2px solid orangered;
+  border-radius: 8px;
+  transition: transform .2s; 
+  width: 100%;
+  color: white;
+}
+
+.registerModalBtn:hover
+{
+  transform: scale(1.1);
+}
+
+.registerModal table
+{
+  width: 100%;
+}
+
+.registerModal input
+{
+  margin: 2% 2%;
+  width: 100%;
+}
+
+#registrationStatus
+{
+  display: none;
+  color: greenyellow;
+}
+
+#errorDisplay
+{
+  color:rgb(240, 28, 28)
+}
+
+
+
+
+/* FEATURES DIV  */
+
+.featureDiv
+{
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Roboto Condensed', sans-serif;
+  color: white;
+  background-color: orangered;
+  width: 80%;
+  margin: auto;
+  font-size: 3vw;
+  border-radius: 6px;
+  margin-top: 10%;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+  
+  /* z-index: 5; */
+}
+
+.featureTextDiv
+{
+  width: 50%;
+  padding: 5% 4%;
+}
+
+.featureTextDiv h5
+{
+  font-size: 5vw;
+  padding: 10% 0%;
+  font-weight: bold;
+}
+
+.featureImageDiv
+{
+  width: 50%;
+  padding: 3%;
+}
+
+
+
+/* HOME PAGE CSS  */
+
+.homeContainer
+{
+  background-color: whitesmoke;
+  width: 98%;
+  margin: auto;
+  border-radius: 6px;
+  font-family: 'Roboto Condensed', sans-serif;
+  display: flex;
+  justify-content: space-between;
+}
+
+.otherUsersDiv
+{
+  width: 20%;
+}
+
+.postsDiv
+{
+  width: 55%;
+  margin: auto;
+}
+
+.userDetailsDiv
+{
+  width: 20%;
+}
+
+
+.myDetailsHeading
+{
+  font-size: 2.5vw;
+}
+
+
+.userListDiv
+{
+  text-align: start;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5vw;
+}
+
+#searchUsers
+{
+  width: 70%;
+}
+
+.searchUserBtn
+{
+  background-color: orangered;
+  border: 2px solid orangered;
+  border-radius: 4px;
+  color: white;
+  width: 20%;
+  margin: 0% 5%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.onlineIcon
+{
+  color: green;
+}
+
+#captionInput
+{
+  width: 100%;
+  margin: auto;
+}
+
+.onMind
+{
+  font-size: 3vw;
+}
+
+
+.uploadFooterDiv
+{
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.uploadFooterDiv form
+{
+  width: 100%;
+}
+
+#fileUploadInput
+{
+  width: 85%;
+  text-align: start;
+}
+
+.fileUploadBtn
+{
+  background-color: orangered;
+  border: 1px solid orangered;
+  color: white;
+  font-weight: bolder;
+  border-radius: 3px;
+  font-size: 1.7vw;
+  width: 15%;
+  text-align: center;
+  transition: transform .2s; 
+}
+
+.fileUploadBtn:hover
+{
+  transform: scale(1.1);
+}
+
+
+
+/* POST CSS  */
+
+.singlePostDiv
+{
+  margin-top: 5% !important;
+  margin-bottom: 10% !important;
+  width: 90%;
+  margin: auto;
+  padding: 2%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+
+.postImageDiv
+{
+  width: 100%;
+  margin: auto;
+}
+
+.postCreditDiv
+{
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  font-size: 2vw;
+  font-weight: bold;
+}
+
+.postCaptiontDiv
+{
+  width: 100%;
+  margin: auto;
+  font-size: 1.6vw;
+}
+
+.userDetailsDiv
+{
+  /* background-color: white; */
+  height: fit-content;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  
+}
+
+.likeBtn
+{
+  cursor: pointer;
+  transition: transform .2s; 
+}
+
+.likeBtn:hover
+{
+  transform: scale(1.3);
+}
+
+.addCommentDiv
+{
+  text-align: start;
+}
+
+.commentBtn
+{
+  
+  cursor: pointer;
+  transition: transform .2s; 
+}
+
+.commentBtn:hover
+{
+  transform: scale(1.3);
+}
+
+
+.addCommentFlex
+{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.postCommentBtn
+{
+  background-color: orangered;
+  color: white;
+  border: 2px solid orangered;
+  font-size: 2vw;
+  width: 17%;
+  border-radius: 4px;
+  transition: transform .2s; 
+}
+
+.postCommentBtn:hover
+{
+  transform: scale(1.1);
+}
+
+.addCommentInput
+{
+  width: 80%;
+}
+
+.commentsDisplay
+{
+  list-style: none;
+  text-align: start;
+  padding: 2%;
+}
+
+.profilePicDiv
+{
+  padding: 10%;
+}
+
+.postHeader
+{
+  display: flex;
+  justify-content: space-between;
+}
+
+.postProfileImage
+{
+  width: 20%;
+  border-radius: 14px;
+}
+
+.postHeaderCredits
+{
+  padding: 2%;
+  width: 30%;
+  text-align: start;
+}
+
+.postActionDiv
+{
+  padding: 2%;
+  width: 70%;
+  text-align: end;
+}
+
+.postActionBtn
+{
+  background-color: orangered;
+  border: 2px solid orangered;
+  color: white;
+  padding: 1% 3%;
+  border-radius: 4px;
+  transition: transform .2s; 
+}
+
+.postActionBtn:hover
+{
+  transform: scale(1.1);
+}
+
+.editPostModal
+{
+  display: none;
+  position: fixed;
+  top: 20%;
+  left: 17%;
+  background-color: white;
+  width: 70%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  border-radius: 8px;
+  animation: editAnimation 0.5s forwards;
+}
+
+@keyframes editAnimation{
+  0%{
+      opacity: 0;
+      transform: translateY(100%);
+      transition: .1s ease-in-out;
+
   }
-  to {
-    transform: rotate(360deg);
+
+
+  100%{
+      opacity: 1;
+      transform: translateY(0);
   }
 }
+
+.editModalMain
+{
+  display: flex;
+  justify-content: space-between;
+  padding: 2%;
+}
+
+.editImageDiv
+{
+  width: 50%;
+}
+
+
+.editImageDiv img
+{
+  width: 100%;
+  margin: auto;
+}
+
+.editModalHeading
+{
+  font-size: 4vw;
+  margin-bottom: 0%;
+}
+
+.editCaptionDiv
+{
+  width: 50%;
+}
+
+.closeEditModalBtn
+{
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  background-color: orangered;
+  color: white;
+  padding: 1% 2%;
+  cursor: pointer;
+}
+
+#editCaptionInput
+{
+  width: 90%;
+  min-height: 50%;
+}
+
+.saveChangesBtn
+{
+  width: 100%;
+  background-color: orangered;
+  border: 2px solid orangered;
+  color: white;
+  font-size: 2vw;
+  border-radius: 4px;
+}
+
+
+
+.changeImageDiv
+{
+  text-align: end;
+}
+
+.editPostForm
+{
+  width: 90%;
+  text-align: start;
+  margin: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* MEDIA QUERY  */
+
+@media screen and (max-width: 576px) {
+
+  .navLink
+  {
+    font-size: 4vw;
+  }
+
+  .taglineDiv
+  {
+    font-size: 4vw;
+  }
+
+  .taglineDiv h3 
+  {
+    font-size: 7vw;
+  }
+
+  .featureDiv
+  {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: white;
+    background-color: orangered;
+    width: 80%;
+    margin: auto;
+    font-size: 3.5vw;
+    border-radius: 6px;
+    margin-top: 10%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    
+    /* z-index: 5; */
+  }
+
+  .featureTextDiv
+  {
+    width: 50%;
+    padding: 5% 4%;
+  }
+
+  .featureTextDiv h5
+  {
+    font-size: 5vw;
+    padding: 5% 0%;
+    font-weight: bold;
+  }
+
+  .featureImageDiv
+  {
+    width: 50%;
+    padding: 3%;
+  }
+
+  .feedHeading
+  {
+    width: 40%;
+    font-size: 4vw;
+    text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: bold;
+    padding: 0% 3%;
+  }
+
+  #signOutLink
+  {
+    background-color: orangered;
+    padding: 1% 4%;
+    border-radius: 17px;
+    border: 2px solid orangered;
+    font-size: 3.5vw;
+    color: white;
+    font-weight: bold;
+    font-family: 'Roboto Condensed', sans-serif;
+  }
+
+  #aboutUsLink
+  {
+    display: none;
+  }
+
+  .otherUsersDiv
+  {
+    display: none;
+  }
+
+  .userDetailsDiv
+  {
+    display: none;
+    
+  }
+
+  .postsDiv
+  {
+    width: 90%;
+  }
+
+  .onMind
+  {
+    font-size: 6vw;
+  }
+
+  #fileUploadInput
+  {
+    width: 60%;
+  }
+
+  .fileUploadBtn
+  {
+    width: 40%;
+    font-size: 5vw;
+  }
+
+  .singlePostDiv
+  {
+    margin-top: 5%;
+    margin-bottom: 10%;
+    width: 90%;
+    margin: auto;
+    padding: 2%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  }
+
+  .postCreditDiv
+  {
+    font-size: 5vw; 
+  }
+
+  .postCaptiontDiv
+  {
+    font-size: 4vw;
+  }
+
+  .postCommentBtn
+  {
+    font-size: 4vw;
+  }
+
+
+  .registerModal
+  {
+    display: none;
+    position: fixed;
+    width: 60%;
+    top: 25%;
+    left: 20%;
+    background-color: white;
+    padding: 3%;
+    border-radius: 8px;
+    font-family: 'Roboto Condensed', sans-serif;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    font-weight: bolder;
+    font-size: 4vw;
+  }
+
+
+  .loginModal
+  {
+    display: none;
+    position: fixed;
+    width: 60%;
+    top: 20%;
+    left: 20%;
+    background-color: white;
+    padding: 3%;
+    border-radius: 8px;
+    font-family: 'Roboto Condensed', sans-serif;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    font-weight: bolder;
+    font-size: 4vw;
+  }
+
+  .homeContainer
+  {
+    background-color: whitesmoke;
+    width: 94%;
+    margin: auto;
+    border-radius: 6px;
+    font-family: 'Roboto Condensed', sans-serif;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .editPostModal
+  {
+    display: none;
+    position: fixed;
+    top: 20%;
+    left: 10%;
+    background-color: white;
+    width: 80%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    border-radius: 8px;
+    animation: editAnimation 0.5s forwards;
+  }
+
+  .editModalMain
+  {
+    display: block;
+    justify-content: space-between;
+    padding: 2%;
+  }
+
+  .editImageDiv
+  {
+    width: 90%;
+    margin: auto;
+  }
+
+
+  .editImageDiv img
+  {
+    width: 100%;
+    margin: auto;
+  }
+
+  .editModalHeading
+  {
+    font-size: 7vw;
+    margin-bottom: 0%;
+  }
+
+  .editCaptionDiv
+  {
+    width: 100%;
+    margin-top: 10%;
+  }
+
+  .saveChangesBtn
+  {
+    width: 100%;
+    background-color: orangered;
+    border: 2px solid orangered;
+    color: white;
+    font-size: 6vw;
+    border-radius: 4px;
+  }
+
+
+
+}
+
+
